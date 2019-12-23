@@ -1,6 +1,7 @@
-﻿//Author : Iqubal
+﻿//Author : Mohammed Iqubal
 // www.Polyandcode.com
-Shader "PolyAndCode/3dXray"
+//MIT license
+Shader "PolyAndCode/3dXRay"
 {
     Properties
     {

@@ -1,9 +1,9 @@
 # 3DXRayShader : Plane Clipping + Frensel + CrossSection Highlight
 
-www.polyandcode.com
+https://polyandcode.com
 
-![image](https://i.imgur.com/NE2m1vr.gif)
+![Imgur Image](https://i.imgur.com/cQWCtgZ.gif)
 
+![Imgur Image](https://i.imgur.com/M3Y2CZb.gif)
 
-
-
+![Imgur Image](https://i.imgur.com/igRyxwM.gif)

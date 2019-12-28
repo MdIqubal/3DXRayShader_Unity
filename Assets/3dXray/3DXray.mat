@@ -66,21 +66,25 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FrenselPower: 8.46
-    - _Glossiness: 0.5
+    - _FresnelPower: 8.11
+    - _GlossMapScale: 1
+    - _Glossiness: 0.542
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _ClipPlaneNormal: {r: 0, g: 1, b: 0, a: 1}
-    - _ClipPlanePos: {r: 0, g: 0.13, b: -0.035, a: 1}
+    - _ClipPlanePos: {r: 0, g: 0.07, b: -0.035, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CrosssectionColor: {r: 1, g: 0, b: 0.77, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FrenselColor: {r: 0, g: 1, b: 0, a: 1}
+    - _FresnelColor: {r: 0, g: 1, b: 0, a: 1}

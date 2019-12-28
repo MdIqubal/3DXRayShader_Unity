@@ -17,8 +17,8 @@ Shader "PolyAndCode/3dXRay"
         _CrosssectionColor("Crosssection Hightlight",Color) = (1,0,0.77,1)
         _CrosssectionPower("Crosssection Highlight Spread",Range(0,10)) = 1
 
-        _FrenselColor ("Frensel Color", Color) = (0,1,0,1)
-        _FrenselPower("Frensel Size",Range(0,10)) = 1
+        _FresnelColor ("Fresnel Color", Color) = (0,1,0,1)
+        _FresnelPower("Fresnel Size",Range(0,10)) = 1
     }
     SubShader
     {
@@ -89,7 +89,7 @@ Shader "PolyAndCode/3dXRay"
         }
         ENDCG
 
-        //Frensel 
+        //Fresnel 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
         #pragma surface surf Standard fullforwardshadows alpha:fade
@@ -109,8 +109,8 @@ Shader "PolyAndCode/3dXRay"
         float4 _ClipPlaneNormal;
         float4 _ClipPlanePos;
 
-        float4 _FrenselColor; 
-        float _FrenselPower;
+        float4 _FresnelColor; 
+        float _FresnelPower;
 
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
@@ -128,18 +128,18 @@ Shader "PolyAndCode/3dXRay"
             clip(vertexPlaneDot);
 
             //Fresnel Calculation
-            float frenselDot = dot(IN.worldNormal,IN.viewDir);
-            frenselDot =  saturate(1- frenselDot);
+            float fresnelDot = dot(IN.worldNormal,IN.viewDir);
+            fresnelDot =  saturate(1- fresnelDot);
 
-             // TO DO: bool to enable/ disable  frensel 
-            //Now disabling by setting frenselDot to 0 if power is 0
-            frenselDot =  _FrenselPower <=0 ? 0 : pow(frenselDot,10 - _FrenselPower);
+             // TO DO: bool to enable/ disable  fresnel 
+            //Now disabling by setting fresnelDot to 0 if power is 0
+            fresnelDot =  _FresnelPower <=0 ? 0 : pow(fresnelDot,10 - _FresnelPower);
 
             //To ignore inside faces since cull is off
             float facing = IN.facing * 0.5 + 0.5;
             
-            o.Alpha = frenselDot * facing;
-            o.Emission = _FrenselColor *  frenselDot;
+            o.Alpha = fresnelDot * facing;
+            o.Emission = _FresnelColor *  fresnelDot;
         }
         
         ENDCG 
